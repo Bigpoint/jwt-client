@@ -1,0 +1,13 @@
+{
+  "name": "bigpoint/jwt-client-php",
+  "description": "A client to get JWT from a JWT provider written in PHP.",
+  "require": {
+    "php": ">=5.3.3",
+    "bigpoint/http-caller-php": "1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jwt\\Client\\": ["src/Jwt/Client/"]
+    }
+  }
+}
