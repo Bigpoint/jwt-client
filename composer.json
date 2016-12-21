@@ -4,11 +4,8 @@
   "description": "A client to get JWT from a JWT provider written in PHP.",
   "require": {
     "php": ">=5.3.3",
-    "ext-gmp": "*",
     "bigpoint/http-caller-php": "1.*",
     "doctrine/cache": "1.*",
-    "lcobucci/jwt": "3.*",
-    "mdanter/ecc": "0.3.*",
     "monolog/monolog": "1.*"
   },
   "autoload": {
