@@ -155,12 +155,14 @@ class Client
     {
         $tokendata = \explode('.', $token);
 
+        // invalid token
         if (false === \is_array($tokendata) || 2 > \count($tokendata)) {
             return 0;
         }
 
         $payload = \json_decode(\base64_decode($tokendata[1]), true);
 
+        // invalid payload
         if (false === \is_array($payload) || false === \array_key_exists('exp', $payload)) {
             return 0;
         }
