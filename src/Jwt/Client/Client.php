@@ -3,7 +3,6 @@ namespace Jwt\Client;
 
 use \Doctrine\Common\Cache;
 use \Http;
-use \Jwt;
 use \Monolog;
 
 class Client
@@ -67,7 +66,7 @@ class Client
      *
      * @return string
      *
-     * @throws Jwt\Client\Exception if we can't get a token
+     * @throws Exception if we can't get a token
      */
     public function getToken($username, $password)
     {
@@ -101,7 +100,7 @@ class Client
      *
      * @return string
      *
-     * @throws Jwt\Client\Exception
+     * @throws Exception
      */
     private function getTokenFromProvider($username, $password)
     {
@@ -127,7 +126,7 @@ class Client
 
             $this->logger->addError($message);
 
-            throw new Jwt\Client\Exception($message);
+            throw new Exception($message);
         }
 
         $data = \json_decode($result['body'], true);
@@ -140,7 +139,7 @@ class Client
 
             $this->logger->addError($message);
 
-            throw new Jwt\Client\Exception($message);
+            throw new Exception($message);
         }
 
         return $data['jwt'];
